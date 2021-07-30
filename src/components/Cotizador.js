@@ -25,8 +25,8 @@ const Cotizador = ({ setCriptomoneda, infoMoneda, graficoMoneda }) => {
       //console.log(listacripto)
     };
     consultarAPI();
-    setCriptomoneda(moneda);
-  }, [moneda, setCriptomoneda]);
+    //setCriptomoneda(moneda);
+  }, [moneda]);
 
   return (
     <div className="container d-flex  justify-content-center align-items-center mt-5">
@@ -42,8 +42,12 @@ const Cotizador = ({ setCriptomoneda, infoMoneda, graficoMoneda }) => {
               <Card.Title className="text-center">
                 COTIZADOR DE MONEDAS
               </Card.Title>
-
-              <SeleccionarMoneda />
+              <form
+                onChange={setCriptomoneda(moneda)}
+                >
+                    <SeleccionarMoneda />
+              </form>
+              
 
               {moneda !== "" ? (
                 <InfoMoneda infoMoneda={infoMoneda} />

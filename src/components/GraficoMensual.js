@@ -123,28 +123,27 @@ const datosProm = [chunk(numbersV, 24)]
           height={400}
           options={{
             maintainAspectRatio: false,
-            sacales: {
+            scales: {
               yAxes: [
                 {
-                  ticks: {
-                     
-                    beginAtZero: true,
+                  ticks: {                     
+                    //beginAtZero: true,
+                    //stepSize: 10000
                   },
                 },
               ],
-              xAxes: [
-                {
-                  type: "time",
-                  time: {   
-                      
-                      displayFormats:{
-                          day: 'MMM D'
-                      }                
+              // xAxes: [
+              //   {
+              //     type: "time",
+              //     time: { 
+              //         displayFormats:{
+              //             day: 'MMM D'
+              //         }                
                     
                     
-                  },
-                },
-              ],
+              //     },
+              //   },
+              // ],
             },
           }}
         />
