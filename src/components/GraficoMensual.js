@@ -47,15 +47,15 @@ const datesProm = [chunk(dataSetTime, 24)]
    }
    //ELIMINAMOS EL ÚLTIMO ELEMENTO DEL ARRAY PARA QUE NO DE UN ERROR EN EL PROMEDIO
    datesPromMedio.pop()
-   console.log(datesPromMedio)
+  // console.log(datesPromMedio)
 
 //ARREGLAR LA SIMPLIFICACION DE DATOS DEL GRAFICO PARA NO COLAPSAR LA LINEA.
 //dividimos el array en subarrays de 24 valores (un dia completo de 24 horas)
 
     
-const datosProm = [chunk(numbersV, 24)]
+const datosProm = [chunkProm(numbersV, 24)]
   
-  function chunk (numbersV, size) {
+  function chunkProm (numbersV, size) {
 
     const datosProm = [];
     for ( let i = 0; i < numbersV.length; i++){

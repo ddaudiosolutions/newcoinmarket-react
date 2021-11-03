@@ -13,7 +13,9 @@ const Cotizador = ({ setCriptomoneda, infoMoneda, graficoMoneda }) => {
   //UAMOS EL CUSTOM HOOK USEMONEDAS()
   const [moneda, SeleccionarMoneda] = useMonedas("", "", listacripto);
   //console.log(moneda)
-
+  const handleSelectCripto  =(e)=> {
+    setCriptomoneda(e.target.value)
+  }
   //EJECUTAMOS LA
   useEffect(() => {
     const consultarAPI = async () => {
@@ -36,14 +38,14 @@ const Cotizador = ({ setCriptomoneda, infoMoneda, graficoMoneda }) => {
             <img
               className="card-image-top"
               src="/Cryptocurrency-arbitration.jpg"
-              alt="cotizadorLogo"
+              alt="cotizadorLogoMain"
             />
             <Card.Body>
               <Card.Title className="text-center">
                 COTIZADOR DE MONEDAS
               </Card.Title>
               <form
-                onChange={setCriptomoneda(moneda)}
+                onChange={handleSelectCripto}
                 >
                     <SeleccionarMoneda />
               </form>

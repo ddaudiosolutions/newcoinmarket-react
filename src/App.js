@@ -14,9 +14,7 @@ function App() {
 //CREAMOS EL STATE PARA PEDIR AL FORMULARIO LA CRIPTO SELECCIONADA Y GUARDARLA EN EL STATE
 //SE LA PASAMOS AL COMPONENTE COTIZADOR
   const [criptomoneda, setCriptomoneda] = useState ('')
-
   const [infoMoneda, setInfoMoneda] = useState({})
-
   const [graficoMoneda, setGraficoMoneda] = useState([''])
 
     useEffect(()=> {
@@ -26,6 +24,7 @@ function App() {
         let urlMoneda = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=${criptomoneda}&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d`;
       
         const datosMoneda = await axios.get(urlMoneda)
+        console.log(urlMoneda)
         setInfoMoneda(datosMoneda.data[0])      
       }
 
